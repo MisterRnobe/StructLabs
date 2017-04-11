@@ -15,9 +15,12 @@ public class TestClass {
         hashMap.add(11,"g");
         hashMap.add(12,"g");
         hashMap.add(13,"g");
+        hashMap.add(14,"p");
         ((OpenAddressing)hashMap).print();
-        System.out.println(hashMap.get(13));
         hashMap.remove(0);
+        hashMap.remove(5);
+        hashMap.remove(1);
+        hashMap.remove(15);
         ((OpenAddressing)hashMap).print();
         hashMap.add(0,"a");
         ((OpenAddressing)hashMap).print();

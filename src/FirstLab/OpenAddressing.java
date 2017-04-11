@@ -1,5 +1,7 @@
 package FirstLab;
 
+import javax.swing.*;
+
 public class OpenAddressing<K,V> extends HashMap<K,V>{
     private int count;
     private Node[] data;
@@ -23,22 +25,22 @@ public class OpenAddressing<K,V> extends HashMap<K,V>{
         else
             return ((Node<K,V>)data[index]).getValue();
     }
-
+    private void add(Node<K,V> node)
+    {
+        int index = hasher.hash(node.getKey());
+        if ((count+1f)/data.length > rate)
+            this.expand();
+        if (!(data[index] == null || data[index] == plug))
+        {
+            int step = constant - (hasher.hash(node.getKey()) - constant);
+            for(index = (index+step)%data.length; data[index] != null; index = (index+step)%data.length);
+        }
+        data[index] = node;
+        count++;
+    }
     @Override
     public void add(K key, V value) {
-        int index = hasher.hash(key);
-        if (data[index] == null || data[index] == plug)
-        {
-            data[index] = new Node(key,value);
-        }
-        else
-        {
-            int step = constant - (hasher.hash(key) - constant);
-            for(index = (index+step)%data.length; data[index] != null; index = (index+step)%data.length);
-            data[index] = new Node(key,value);
-        }
-        count++;
-
+        this.add(new Node<>(key, value));
     }
     private int getIndex(K key)
     {
@@ -99,7 +101,13 @@ public class OpenAddressing<K,V> extends HashMap<K,V>{
     }
     private void expand()
     {
-        int newCapacity = getNextPrime(data.length * 12 / 10);
+        int newCapacity = getNextPrime(data.length * 14 / 10);
+        OpenAddressing<K,V> temp = new OpenAddressing<>(newCapacity);
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] != null && data[i]!= plug)
+                temp.add(data[i]);
+        }
+        this.data = temp.data;
 
     }
 
