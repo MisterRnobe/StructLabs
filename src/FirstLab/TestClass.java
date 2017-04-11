@@ -5,21 +5,22 @@ package FirstLab;
  */
 public class TestClass {
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = HashMap.createChaining(10);
-        hashMap.add("John",123);
-        hashMap.add("Will",456);
-        hashMap.add("James",798);
-        int val = hashMap.remove("Will");
-        System.out.println(val);
-        System.out.println(hashMap.get("Will"));
-        HashMap<String, Integer> openAddressing = HashMap.createAddressing(10);
-        openAddressing.add("John", 123);
-        openAddressing.add("Will", 456);
-        openAddressing.add("James", 789);
-        System.out.println(openAddressing.get("John"));
-        openAddressing.remove("John");
-        System.out.println(openAddressing.get("John"));
-        openAddressing.add("John", 123);
-        System.out.println(openAddressing.get("John"));
+        HashMap<Integer,String> hashMap = HashMap.createAddressing(10);
+        hashMap.add(0,"a");
+        hashMap.add(1,"b");
+        hashMap.add(2,"d");
+        hashMap.add(3,"d");
+        hashMap.add(4,"e");
+        hashMap.add(5,"f");
+        hashMap.add(11,"g");
+        hashMap.add(12,"g");
+        hashMap.add(13,"g");
+        ((OpenAddressing)hashMap).print();
+        System.out.println(hashMap.get(13));
+        hashMap.remove(0);
+        ((OpenAddressing)hashMap).print();
+        hashMap.add(0,"a");
+        ((OpenAddressing)hashMap).print();
+
     }
 }
