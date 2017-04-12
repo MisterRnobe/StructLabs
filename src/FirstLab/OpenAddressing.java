@@ -101,14 +101,14 @@ public class OpenAddressing<K,V> extends HashMap<K,V>{
     }
     private void expand()
     {
-        int newCapacity = getNextPrime(data.length * 14 / 10);
-        OpenAddressing<K,V> temp = new OpenAddressing<>(newCapacity);
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] != null && data[i]!= plug)
-                temp.add(data[i]);
+        int newCapacity = getNextPrime(data.length * 12 / 10);
+        Node[] oldData = data;
+        data = new Node[newCapacity];
+        count = 0;
+        for (int i = 0; i < oldData.length; i++) {
+            if (oldData[i] != null && oldData[i]!= plug)
+                this.add(oldData[i]);
         }
-        this.data = temp.data;
-
     }
 
 }
