@@ -1,6 +1,4 @@
-package FirstLab;
-
-import java.util.Collection;
+package HashMap;
 
 /**
  * Created by Dell on 11.04.2017.

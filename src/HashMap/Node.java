@@ -1,4 +1,4 @@
-package FirstLab;
+package HashMap;
 
 /**
  * Created by Dell on 16.03.2017.

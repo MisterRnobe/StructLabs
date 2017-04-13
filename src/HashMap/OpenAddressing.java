@@ -1,6 +1,4 @@
-package FirstLab;
-
-import javax.swing.*;
+package HashMap;
 
 public class OpenAddressing<K,V> extends HashMap<K,V>{
     private int count;

@@ -1,4 +1,4 @@
-package FirstLab;
+package HashMap;
 import java.util.LinkedList;
 
 /**
