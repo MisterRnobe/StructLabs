@@ -19,7 +19,7 @@ public class Test {
         System.out.println();
         //tree.remove(2);
         //tree.remove(5);
-        System.out.println(tree.remove(1));
+        System.out.println(tree.remove(2));
         tree.print();
         //System.out.println(tree.get(3));
     }

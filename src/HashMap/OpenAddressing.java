@@ -3,7 +3,7 @@ package HashMap;
 public class OpenAddressing<K,V> extends HashMap<K,V>{
     private int count;
     private Node[] data;
-    private Node<K,V> plug = new Node<>(null,null);
+    private Node<K,V> plug = new Node<K,V>(null,null);
     private static final float rate = 0.8f;
 
     private int constant;
@@ -38,7 +38,7 @@ public class OpenAddressing<K,V> extends HashMap<K,V>{
     }
     @Override
     public void add(K key, V value) {
-        this.add(new Node<>(key, value));
+        this.add(new Node<K,V>(key, value));
     }
     private int getIndex(K key)
     {

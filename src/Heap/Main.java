@@ -27,5 +27,14 @@ public class Main {
         for (int i = 0; i < heap.getLength(); i++) {
             System.out.println(heap.heap[i]+" ");
         }
+        System.out.print("Delete: ");
+        for (int i = 0; i < 5; i++) {
+            System.out.print(heap.deleteMax()+" ");
+        }
+        System.out.println();
+        System.out.println("===================");
+        for (int i = 0; i < heap.getLength(); i++) {
+            System.out.println(heap.heap[i]+" ");
+        }
     }
 }

@@ -20,7 +20,6 @@ public class Heap <V> implements PriorityQueue<V> {
         {
             swap(i, i/2);
         }
-
     }
     private void swap(int i, int j)
     {
@@ -36,16 +35,14 @@ public class Heap <V> implements PriorityQueue<V> {
         heapify(0);
         return value;
     }
-
-
     @Override
     public V getMax() {
         return (V)heap[0].getValue();
     }
 
     @Override
-    public void editKey(Integer value) {
-
+    public void editKey(Integer oldKey, Integer newKey) {
+        // TODO: 13.04.2017
     }
     private void heapify(int i)
     {
@@ -72,7 +69,6 @@ public class Heap <V> implements PriorityQueue<V> {
             {
                 break;
             }
-
             swap(i, largestChild);
             i = largestChild;
         }
@@ -96,6 +92,4 @@ public class Heap <V> implements PriorityQueue<V> {
         }
         return k;
     }
-
-
 }

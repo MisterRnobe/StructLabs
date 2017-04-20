@@ -6,6 +6,5 @@ public interface PriorityQueue<V> {
     void insert(Integer key, V value);
     V deleteMax();
     V getMax();
-    void editKey(Integer value);
-
+    void editKey(Integer oldKey, Integer newKey);
 }

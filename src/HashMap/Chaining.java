@@ -34,7 +34,7 @@ public class Chaining<K,V> extends HashMap<K,V>{
     }
     public void add(K key, V value)
     {
-        this.add(new Node<>(key,value));
+        this.add(new Node<K,V>(key,value));
     }
 
     public V get(K key)
