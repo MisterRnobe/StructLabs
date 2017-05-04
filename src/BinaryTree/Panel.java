@@ -26,7 +26,7 @@ public class Panel extends JPanel {
         if (node.getRight()!=0)
         {
             dim = drawTree(g, node.getRightNode(), fromX + width/2, toX, y + 40);
-            g.drawLine(fromX + width/2, y, (int)dim.getWidth(), (int)dim.getHeight());
+            g.drawLine(fromX + width/2, y+20, (int)dim.getWidth(), (int)dim.getHeight());
         }
         g.drawRect(fromX + width/4, y, width/2, 20);
         g.drawString(node.toString(), fromX + width/2, y+20);
@@ -34,7 +34,7 @@ public class Panel extends JPanel {
         if (node.getLeft() != 0)
         {
             dim = drawTree(g, node.getLeftNode(), fromX, fromX + width/2, y + 40);
-            g.drawLine(fromX + width/2, y, (int)dim.getWidth(), (int)dim.getHeight());
+            g.drawLine(fromX + width/2, y+20, (int)dim.getWidth(), (int)dim.getHeight());
         }
         return new Dimension(fromX + width/2, y);
     }

@@ -1,11 +1,11 @@
-package BTS;
+package BST;
 
 /**
  * Created by Dell on 12.04.2017.
  */
 public class Test {
     public static void main(String[] args) {
-        BinaryTreeSearch<Integer, String> tree = new BinaryTreeSearch<>();
+        BinarySearchTree<Integer, String> tree = new BinarySearchTree<>();
         tree.put(2,"two");
         tree.put(1,"one");
         tree.put(5,"five");

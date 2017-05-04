@@ -1,18 +1,18 @@
-package BTS;
+package BST;
 
 /**
  * Created by Dell on 12.04.2017.
  */
-public class BinaryTreeSearch<K extends Comparable<K>, V> {
+public class BinarySearchTree<K extends Comparable<K>, V> {
     public Node<K,V> root;
     private int count;
 
-    public BinaryTreeSearch(K key, V value)
+    public BinarySearchTree(K key, V value)
     {
         this.root = new Node<>(key,value);
         count = 1;
     }
-    public BinaryTreeSearch()
+    public BinarySearchTree()
     {
         this.root = null;
         count = 0;
