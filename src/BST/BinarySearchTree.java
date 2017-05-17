@@ -204,4 +204,62 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         if (v.getRight() != null)
             print(v.getRight());
     }
+    public BinarySearchTree<K, V> postOrderPrint() {
+        System.out.println("Post order: ");
+        printPost(root);
+        System.out.println();
+        return this;
+    }
+    private void printPost(Node node)
+    {
+        if (node.getLeft() != null)
+            printPost(node.getLeft());
+        if (node.getRight() != null)
+            printPost(node.getRight());
+        System.out.print(node + "| ");
+    }
+
+    public BinarySearchTree<K, V> preOrderPrint() {
+        System.out.println("Pre order: ");
+        printPre(root);
+        System.out.println();
+        return this;
+    }
+    private void printPre(Node node)
+    {
+        System.out.print(node + "| ");
+        if (node.getLeft() != null)
+            printPost(node.getLeft());
+        if (node.getRight() != null)
+            printPost(node.getRight());
+    }
+    public BinarySearchTree<K, V> sortedPrint() {
+        System.out.println("Sorted: ");
+        sorted(root);
+        System.out.println();
+        return this;
+    }
+    private void sorted(Node node)
+    {
+        if (node.getLeft() != null)
+            sorted(node.getLeft());
+        System.out.print(node + "| ");
+        if (node.getRight() != null)
+            sorted(node.getRight());
+    }
+    public V getMax()
+    {
+        Node<K,V> current = root;
+        while (current.hasRight())
+            current = current.getRight();
+        return current.getValue();
+    }
+    public V getMin()
+    {
+        Node<K,V> current = root;
+        while (current.hasLeft())
+            current = current.getLeft();
+        return current.getValue();
+    }
+
 }

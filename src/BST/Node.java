@@ -54,4 +54,9 @@ public class Node<K,V> {
     {
         return right != null;
     }
+
+    @Override
+    public String toString() {
+        return key.toString()+" -> "+value.toString();
+    }
 }

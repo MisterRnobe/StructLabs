@@ -22,7 +22,7 @@ class Node<K,V> {
             this.right = 0;
         else
             this.right = right.left+ right.right + 1;
-
+        parent = null;
 
     }
     Node(K key, V value)
@@ -46,6 +46,14 @@ class Node<K,V> {
     {
         right++;
     }
+    public void decreaseLeft()
+    {
+        left--;
+    }
+    public void decreaseRight()
+    {
+        right--;
+    }
 
     public void setParent(Node<K, V> parent) {
         this.parent = parent;
@@ -53,7 +61,10 @@ class Node<K,V> {
 
     public void setLeftNode(Node<K, V> leftNode) {
         this.leftNode = leftNode;
+        if (leftNode == null)
+            return;
         this.left++;
+        leftNode.parent = this;
     }
 
     public Node<K, V> getRightNode() {
@@ -62,7 +73,10 @@ class Node<K,V> {
 
     public void setRightNode(Node<K, V> rightNode) {
         this.rightNode = rightNode;
+        if (rightNode == null)
+            return;
         this.right++;
+        rightNode.parent = this;
     }
 
     public int getLeft() {

@@ -11,16 +11,12 @@ public class Test {
         tree.put(5,"five");
         tree.put(4,"four");
         tree.put(3,"three");
-        /*tree.put(1, "one");
-        tree.put(2, "two");
-        tree.put(3, "three");
-        tree.put(4, "four");*/
-        tree.print();
-        System.out.println();
-        //tree.remove(2);
-        //tree.remove(5);
-        System.out.println(tree.remove(2));
-        tree.print();
-        //System.out.println(tree.get(3));
+        tree.put(0,"zero");
+        tree.put(6,"six");
+        tree.put(8,"eight");
+        tree.put(7,"seven");
+        tree.postOrderPrint().preOrderPrint().sortedPrint();
+        System.out.println(String.format("Max is: %s, min is %s", tree.getMax(),tree.getMin()));
+
     }
 }
